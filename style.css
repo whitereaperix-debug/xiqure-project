@@ -437,7 +437,7 @@ body::after {
 .player-list li {
     display: grid;
     min-width: 0;
-    min-height: clamp(48px, 6.5vh, 61px);
+    min-height: clamp(42px, 5.4vh, 54px);
     grid-template-columns: 34px minmax(0, 1fr);
     align-items: center;
     gap: 8px;
@@ -553,8 +553,8 @@ body::after {
     display: grid;
     min-height: 0;
     grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-    padding: 18px 22px;
+    gap: 8px;
+    padding: 14px 18px;
     overflow: hidden;
     border: 1px solid rgb(212 225 215 / 25%);
     border-radius: 22px;
@@ -663,7 +663,7 @@ body::after {
 .outcast-profile {
     display: grid;
     min-width: 0;
-    min-height: 36px;
+    min-height: 32px;
     grid-template-columns: 30px minmax(0, 1fr) 20px;
     align-items: center;
     gap: 8px;
@@ -967,7 +967,7 @@ body::after {
 
     .screen {
         grid-template-columns: 1fr;
-        grid-template-rows: minmax(142px, 0.58fr) minmax(0, 1.75fr);
+        grid-template-rows: minmax(120px, 0.48fr) minmax(0, 1.85fr);
         gap: 13px;
         padding: 16px 0 13px;
     }
@@ -1051,7 +1051,7 @@ body::after {
     }
 
     .panel-heading {
-        padding: 14px 0 10px;
+        padding: 12px 0 8px;
     }
 
     .panel-heading .eyebrow {
@@ -1068,7 +1068,7 @@ body::after {
     }
 
     .player-list li {
-        min-height: clamp(37px, 5.5vh, 46px);
+        min-height: clamp(34px, 4.8vh, 40px);
         gap: 7px;
         border-radius: 10px;
     }
@@ -1087,8 +1087,8 @@ body::after {
     }
 
     .outcasts-card {
-        gap: 10px;
-        padding: 11px 14px;
+        gap: 6px;
+        padding: 9px 12px;
         border-radius: 18px;
     }
 
@@ -1113,7 +1113,7 @@ body::after {
     }
 
     .outcast-profile {
-        min-height: 34px;
+        min-height: 30px;
     }
 
     .outcast-name {
@@ -1170,18 +1170,18 @@ body::after {
     }
 
     .player-list li {
-        min-height: 30px;
+        min-height: 24px;
     }
 
     .player-panel .player-list .player-name {
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-top: 1px;
+        padding-bottom: 1px;
     }
 
     .outcasts-card {
-        gap: 8px;
-        padding-top: 8px;
-        padding-bottom: 8px;
+        gap: 5px;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 
     .outcasts-copy h3 {
@@ -1193,7 +1193,7 @@ body::after {
     }
 
     .outcast-profile {
-        min-height: 30px;
+        min-height: 26px;
     }
 }
 
@@ -1205,7 +1205,7 @@ body::after {
     }
 
     .screen {
-        grid-template-rows: 76px minmax(0, 1fr);
+        grid-template-rows: 68px minmax(0, 1fr);
         gap: 6px;
         padding-top: 6px;
         padding-bottom: 6px;
@@ -1230,8 +1230,8 @@ body::after {
     }
 
     .owner {
-        min-height: 40px;
-        padding-bottom: 7px;
+        min-height: 36px;
+        padding-bottom: 5px;
     }
 
     .owner-name h2 {
@@ -1243,25 +1243,25 @@ body::after {
     }
 
     .panel-heading {
-        padding: 6px 0;
+        padding: 4px 0;
     }
 
     .panel-heading h2 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .player-list li {
-        min-height: 25px;
+        min-height: 22px;
     }
 
     .player-panel .player-list .player-name {
-        padding-top: 2px;
-        padding-bottom: 2px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .outcasts-card {
-        gap: 6px;
-        padding: 5px 7px;
+        gap: 4px;
+        padding: 3px 7px;
     }
 
     .outcasts-label {
@@ -1284,7 +1284,7 @@ body::after {
     }
 
     .outcast-profile {
-        min-height: 26px;
+        min-height: 24px;
         grid-template-columns: 24px minmax(0, 1fr) 16px;
         gap: 5px;
     }
@@ -1309,7 +1309,12 @@ body::after {
     }
 
     .player-list li {
-        min-height: 40px;
+        min-height: 30px;
+    }
+
+    .player-panel .player-list .player-name {
+        padding-top: 2px;
+        padding-bottom: 2px;
     }
 
     .outcasts-card {
@@ -1343,21 +1348,21 @@ body::after {
     }
 
     .player-list li {
-        min-height: 30px;
+        min-height: 25px;
     }
 
     .player-panel .player-list .player-name {
-        padding-top: 3px;
-        padding-bottom: 3px;
+        padding-top: 1px;
+        padding-bottom: 1px;
     }
 
     .outcasts-card {
-        gap: 6px;
-        padding: 4px 10px;
+        gap: 4px;
+        padding: 3px 10px;
     }
 
     .outcast-profile {
-        min-height: 28px;
+        min-height: 26px;
     }
 
     .outcasts-copy h3 {
