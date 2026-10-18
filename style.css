@@ -502,7 +502,7 @@ body::after {
     justify-content: space-between;
     gap: 7px;
     overflow: hidden;
-    padding: 8px 0;
+    padding: 2px 0;
     border: 0;
     border-radius: 8px;
     background: transparent;
@@ -1309,7 +1309,7 @@ body::after {
     }
 
     .player-list li {
-        min-height: 30px;
+        min-height: 28px;
     }
 
     .player-panel .player-list .player-name {
