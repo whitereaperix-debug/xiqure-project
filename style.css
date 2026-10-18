@@ -550,12 +550,11 @@ body::after {
 
 .outcasts-card {
     position: relative;
-    display: flex;
-    min-height: 126px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    padding: 22px 25px;
+    display: grid;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 18px 22px;
     overflow: hidden;
     border: 1px solid rgb(212 225 215 / 25%);
     border-radius: 22px;
@@ -605,6 +604,13 @@ body::after {
     z-index: 1;
 }
 
+.outcasts-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
 .outcasts-label {
     margin: 0 0 6px;
     color: var(--soft);
@@ -646,6 +652,69 @@ body::after {
     transform: rotate(-12deg) scale(1.06);
     background: rgb(205 222 210 / 8%);
     box-shadow: 0 0 20px rgb(205 222 210 / 12%);
+}
+
+.outcasts-list {
+    display: grid;
+    gap: 4px;
+    border-top: 1px solid var(--line);
+}
+
+.outcast-profile {
+    display: grid;
+    min-width: 0;
+    min-height: 36px;
+    grid-template-columns: 30px minmax(0, 1fr) 20px;
+    align-items: center;
+    gap: 8px;
+    padding: 0 7px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 9px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background 220ms ease, padding 220ms ease, color 220ms ease;
+}
+
+.outcast-profile:hover,
+.outcast-profile:focus-visible {
+    padding-right: 11px;
+    padding-left: 11px;
+    background: rgb(205 222 210 / 8%);
+    color: white;
+}
+
+.outcast-profile:focus-visible {
+    outline: 2px solid var(--mist);
+    outline-offset: 2px;
+}
+
+.outcast-name {
+    min-width: 0;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 550;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.outcast-name .profile-alias {
+    font-size: 0.8em;
+}
+
+.outcast-arrow {
+    color: var(--mist);
+    opacity: 0.6;
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.outcast-profile:hover .outcast-arrow,
+.outcast-profile:focus-visible .outcast-arrow {
+    opacity: 1;
+    transform: translate(2px, -2px);
 }
 
 .empty-mark {
@@ -898,7 +967,7 @@ body::after {
 
     .screen {
         grid-template-columns: 1fr;
-        grid-template-rows: minmax(150px, 0.58fr) minmax(0, 1.75fr);
+        grid-template-rows: minmax(142px, 0.58fr) minmax(0, 1.75fr);
         gap: 13px;
         padding: 16px 0 13px;
     }
@@ -1018,7 +1087,6 @@ body::after {
     }
 
     .outcasts-card {
-        min-height: 88px;
         gap: 10px;
         padding: 11px 14px;
         border-radius: 18px;
@@ -1042,6 +1110,14 @@ body::after {
         width: 34px;
         height: 34px;
         font-size: 18px;
+    }
+
+    .outcast-profile {
+        min-height: 34px;
+    }
+
+    .outcast-name {
+        font-size: 14px;
     }
 
     .bottom-bar {
@@ -1079,7 +1155,7 @@ body::after {
 
 @media (max-width: 760px) and (max-height: 720px) {
     .screen {
-        grid-template-rows: 112px minmax(0, 1fr);
+        grid-template-rows: 96px minmax(0, 1fr);
         gap: 8px;
         padding-top: 8px;
         padding-bottom: 8px;
@@ -1094,11 +1170,16 @@ body::after {
     }
 
     .player-list li {
-        min-height: 34px;
+        min-height: 30px;
+    }
+
+    .player-panel .player-list .player-name {
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     .outcasts-card {
-        min-height: 77px;
+        gap: 8px;
         padding-top: 8px;
         padding-bottom: 8px;
     }
@@ -1110,6 +1191,10 @@ body::after {
     .outcasts-note {
         font-size: 10px;
     }
+
+    .outcast-profile {
+        min-height: 30px;
+    }
 }
 
 @media (max-width: 760px) and (max-height: 600px) {
@@ -1120,10 +1205,10 @@ body::after {
     }
 
     .screen {
-        grid-template-rows: 94px minmax(0, 1fr);
-        gap: 8px;
-        padding-top: 8px;
-        padding-bottom: 8px;
+        grid-template-rows: 76px minmax(0, 1fr);
+        gap: 6px;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 
     .hero .eyebrow {
@@ -1166,11 +1251,16 @@ body::after {
     }
 
     .player-list li {
-        min-height: 30px;
+        min-height: 25px;
+    }
+
+    .player-panel .player-list .player-name {
+        padding-top: 2px;
+        padding-bottom: 2px;
     }
 
     .outcasts-card {
-        min-height: 66px;
+        gap: 6px;
         padding: 5px 7px;
     }
 
@@ -1191,6 +1281,40 @@ body::after {
         width: 27px;
         height: 27px;
         font-size: 15px;
+    }
+
+    .outcast-profile {
+        min-height: 26px;
+        grid-template-columns: 24px minmax(0, 1fr) 16px;
+        gap: 5px;
+    }
+
+    .outcast-name {
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 760px) and (min-width: 761px) {
+    .player-panel {
+        padding: 16px 22px;
+    }
+
+    .owner {
+        min-height: 54px;
+        padding-bottom: 10px;
+    }
+
+    .panel-heading {
+        padding: 12px 0 8px;
+    }
+
+    .player-list li {
+        min-height: 40px;
+    }
+
+    .outcasts-card {
+        gap: 8px;
+        padding: 12px 16px;
     }
 }
 
@@ -1219,12 +1343,25 @@ body::after {
     }
 
     .player-list li {
-        min-height: 35px;
+        min-height: 30px;
+    }
+
+    .player-panel .player-list .player-name {
+        padding-top: 3px;
+        padding-bottom: 3px;
     }
 
     .outcasts-card {
-        min-height: 82px;
-        padding: 8px 10px;
+        gap: 6px;
+        padding: 4px 10px;
+    }
+
+    .outcast-profile {
+        min-height: 28px;
+    }
+
+    .outcasts-copy h3 {
+        font-size: 20px;
     }
 
 }
