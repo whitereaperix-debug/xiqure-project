@@ -21,9 +21,9 @@
         <main class="screen" id="top">
             <section class="hero" aria-labelledby="page-title">
                 <div class="hero-copy">
-                    <p class="eyebrow">A SMALL PROJECT IN A BIG FOG</p>
+                    <p class="eyebrow">GUARDIANS OF THE INNOCENT</p>
                     <h1 id="page-title">Xiqure<br><span>Project</span></h1>
-                    <p class="hero-note">We play. We fling. We remember.</p>
+                    <p class="hero-note">Protecting civilians in Fling Things and People.</p>
                 </div>
                 <div class="light-beam" aria-hidden="true"></div>
                 <div class="mist-light" aria-hidden="true"></div>
@@ -34,7 +34,7 @@
                 <div class="owner">
                     <span class="owner-label">OWNER</span>
                     <div class="owner-name">
-                        <button class="profile-trigger owner-trigger" type="button" data-display="Rynruftapov" data-username="Danyahhhix" data-role="Project owner" data-comment="" aria-haspopup="dialog">
+                        <button class="profile-trigger owner-trigger" type="button" data-display="Rynruftapov" data-username="Danyahhhix" data-role="Project owner" data-comment="Need help? Contact us on Telegram:" data-contact-url="https://t.me/Xiqure" aria-haspopup="dialog">
                             <span>Rynruftapov</span>
                             <span class="profile-alias">(Danyahhhix)</span>
                         </button>
@@ -44,8 +44,8 @@
 
                 <div class="panel-heading">
                     <div>
-                        <p class="eyebrow">OUR PEOPLE</p>
-                        <h2 id="players-title">The best <span>· 05</span></h2>
+                        <p class="eyebrow">OUR PROTECTORS</p>
+                        <h2 id="players-title">The guardians <span>· 05</span></h2>
                     </div>
                     <span class="live-mark"><span></span> IN THE GAME</span>
                 </div>
@@ -83,37 +83,6 @@
                     </li>
                 </ol>
 
-                </section>
-                <section class="outcasts-card" aria-labelledby="outcasts-title">
-                    <div class="outcasts-heading">
-                        <div class="outcasts-copy">
-                            <p class="outcasts-label">OUTCASTS</p>
-                            <h3 id="outcasts-title">The weakness</h3>
-                        </div>
-                        <span class="outcasts-count" aria-label="4 accounts">04</span>
-                    </div>
-                    <div class="outcasts-list">
-                        <button class="outcast-profile profile-trigger" type="button" data-display="seyami" data-username="Ygkdfh2" data-role="Outcast" data-comment="" aria-haspopup="dialog">
-                            <span class="player-number">01</span>
-                            <span class="outcast-name">seyami <span class="profile-alias">(Ygkdfh2)</span></span>
-                            <span class="outcast-arrow" aria-hidden="true">↗</span>
-                        </button>
-                        <button class="outcast-profile profile-trigger" type="button" data-display="SEYAMLIN" data-username="SEYAMLIN" data-role="Outcast" data-comment="" aria-haspopup="dialog">
-                            <span class="player-number">02</span>
-                            <span class="outcast-name">SEYAMLIN <span class="profile-alias">(SEYAMLIN)</span></span>
-                            <span class="outcast-arrow" aria-hidden="true">↗</span>
-                        </button>
-                        <button class="outcast-profile profile-trigger" type="button" data-display="Veyrox" data-username="sif97" data-role="Outcast" data-comment="" aria-haspopup="dialog">
-                            <span class="player-number">03</span>
-                            <span class="outcast-name">Veyrox <span class="profile-alias">(sif97)</span></span>
-                            <span class="outcast-arrow" aria-hidden="true">↗</span>
-                        </button>
-                        <button class="outcast-profile profile-trigger" type="button" data-display="Milo" data-username="RobloxMilo33" data-role="Outcast" data-comment="" aria-haspopup="dialog">
-                            <span class="player-number">04</span>
-                            <span class="outcast-name">Milo <span class="profile-alias">(RobloxMilo33)</span></span>
-                            <span class="outcast-arrow" aria-hidden="true">↗</span>
-                        </button>
-                    </div>
                 </section>
             </div>
         </main>
@@ -162,6 +131,15 @@
                 profileUsername.textContent = `(${trigger.dataset.username})`;
                 profileRole.textContent = trigger.dataset.role;
                 profileComment.textContent = trigger.dataset.comment || "No comment from this player yet.";
+                if (trigger.dataset.contactUrl) {
+                    const contactLink = document.createElement("a");
+                    contactLink.href = trigger.dataset.contactUrl;
+                    contactLink.className = "dialog-comment-link";
+                    contactLink.textContent = trigger.dataset.contactUrl;
+                    contactLink.target = "_blank";
+                    contactLink.rel = "noopener noreferrer";
+                    profileComment.append(" ", contactLink);
+                }
                 profileDialog.showModal();
             });
         });

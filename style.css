@@ -164,7 +164,7 @@ body::after {
     min-width: 0;
     min-height: 0;
     height: 100%;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto;
     align-content: center;
     gap: 14px;
 }
@@ -548,207 +548,6 @@ body::after {
     outline-offset: 4px;
 }
 
-.outcasts-card {
-    position: relative;
-    display: grid;
-    min-height: 0;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
-    padding: 14px 18px;
-    overflow: hidden;
-    border: 1px solid rgb(212 225 215 / 25%);
-    border-radius: 22px;
-    background:
-        radial-gradient(ellipse at 8% 0%, rgb(206 224 210 / 8%), transparent 45%),
-        linear-gradient(100deg, rgb(198 216 202 / 7%), transparent 62%),
-        var(--glass);
-    box-shadow: 0 24px 70px rgb(0 0 0 / 28%), inset 0 1px rgb(255 255 255 / 5%);
-    backdrop-filter: blur(17px);
-    animation: panel-enter 900ms 360ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
-    transition: border-color 350ms ease, transform 450ms cubic-bezier(0.2, 0.75, 0.25, 1), box-shadow 450ms ease, background-color 350ms ease;
-}
-
-.outcasts-card:hover {
-    transform: translateY(-2px);
-    border-color: rgb(212 225 215 / 39%);
-    box-shadow: 0 28px 78px rgb(0 0 0 / 33%), inset 0 1px rgb(255 255 255 / 8%);
-}
-
-.outcasts-card::after {
-    position: absolute;
-    top: -60%;
-    right: 4%;
-    width: 120px;
-    height: 220%;
-    background: linear-gradient(90deg, transparent, rgb(205 222 210 / 5%), transparent);
-    content: "";
-    transform: rotate(26deg);
-    animation: empty-sheen 8s ease-in-out infinite;
-    pointer-events: none;
-}
-
-@keyframes empty-sheen {
-    0%,
-    30% {
-        translate: -160px 0;
-    }
-
-    70%,
-    100% {
-        translate: 220px 0;
-    }
-}
-
-.outcasts-copy {
-    position: relative;
-    z-index: 1;
-}
-
-.outcasts-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-}
-
-.outcasts-label {
-    margin: 0 0 6px;
-    color: var(--soft);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-}
-
-.outcasts-copy h3 {
-    margin: 0;
-    color: var(--ink);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 25px;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.outcasts-note {
-    margin: 5px 0 0;
-    color: var(--soft);
-    font-size: 14px;
-}
-
-.outcasts-count {
-    display: grid;
-    width: 45px;
-    height: 45px;
-    flex: 0 0 auto;
-    place-items: center;
-    border: 1px solid rgb(207 224 212 / 23%);
-    border-radius: 50%;
-    color: var(--mist);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 22px;
-    transition: transform 450ms cubic-bezier(0.2, 0.75, 0.25, 1), background 300ms ease, box-shadow 300ms ease;
-}
-
-.outcasts-card:hover .outcasts-count {
-    transform: rotate(-12deg) scale(1.06);
-    background: rgb(205 222 210 / 8%);
-    box-shadow: 0 0 20px rgb(205 222 210 / 12%);
-}
-
-.outcasts-list {
-    display: grid;
-    gap: 4px;
-    border-top: 1px solid var(--line);
-}
-
-.outcast-profile {
-    display: grid;
-    min-width: 0;
-    min-height: 30px;
-    grid-template-columns: 30px minmax(0, 1fr) 20px;
-    align-items: center;
-    gap: 8px;
-    padding: 0 7px;
-    border: 0;
-    border-bottom: 1px solid var(--line);
-    border-radius: 9px;
-    background: transparent;
-    color: var(--ink);
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-    transition: background 220ms ease, padding 220ms ease, color 220ms ease;
-}
-
-.outcast-profile:hover,
-.outcast-profile:focus-visible {
-    padding-right: 11px;
-    padding-left: 11px;
-    background: rgb(205 222 210 / 8%);
-    color: white;
-}
-
-.outcast-profile:focus-visible {
-    outline: 2px solid var(--mist);
-    outline-offset: 2px;
-}
-
-.outcast-name {
-    min-width: 0;
-    overflow: hidden;
-    font-size: 15px;
-    font-weight: 550;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.outcast-name .profile-alias {
-    font-size: 0.8em;
-}
-
-.outcast-arrow {
-    color: var(--mist);
-    opacity: 0.6;
-    transition: opacity 180ms ease, transform 180ms ease;
-}
-
-.outcast-profile:hover .outcast-arrow,
-.outcast-profile:focus-visible .outcast-arrow {
-    opacity: 1;
-    transform: translate(2px, -2px);
-}
-
-.empty-mark {
-    display: grid;
-    width: 25px;
-    height: 25px;
-    flex: 0 0 auto;
-    place-items: center;
-    border: 1px solid rgb(207 224 212 / 22%);
-    border-radius: 50%;
-    color: var(--mist);
-    font-family: Georgia, serif;
-    font-size: 14px;
-}
-
-.not-listed strong,
-.not-listed small {
-    display: block;
-}
-
-.not-listed strong {
-    color: var(--ink);
-    font-size: 13px;
-    font-weight: 550;
-}
-
-.not-listed small {
-    margin-top: 3px;
-    color: var(--soft);
-    font-family: Georgia, serif;
-    font-size: 12px;
-    font-style: italic;
-}
-
 .bottom-bar {
     border-top: 1px solid var(--line);
     color: var(--soft);
@@ -929,6 +728,17 @@ body::after {
     line-height: 1.55;
 }
 
+.dialog-comment-link {
+    color: var(--mist);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.dialog-comment-link:hover,
+.dialog-comment-link:focus-visible {
+    color: white;
+}
+
 .dialog-index {
     display: block;
     margin-top: 23px;
@@ -973,8 +783,7 @@ body::after {
     }
 
     .roster-stack {
-        grid-template-rows: minmax(0, 1fr) auto;
-        gap: 10px;
+        grid-template-rows: minmax(0, 1fr);
     }
 
     .hero {
@@ -1086,40 +895,6 @@ body::after {
         font-size: 0.78em;
     }
 
-    .outcasts-card {
-        gap: 6px;
-        padding: 9px 12px;
-        border-radius: 18px;
-    }
-
-    .outcasts-label {
-        margin-bottom: 3px;
-        font-size: 8px;
-    }
-
-    .outcasts-copy h3 {
-        font-size: 20px;
-    }
-
-    .outcasts-note {
-        margin-top: 3px;
-        font-size: 12px;
-    }
-
-    .outcasts-count {
-        width: 34px;
-        height: 34px;
-        font-size: 18px;
-    }
-
-    .outcast-profile {
-        min-height: 30px;
-    }
-
-    .outcast-name {
-        font-size: 14px;
-    }
-
     .bottom-bar {
         font-size: 6px;
         letter-spacing: 0.09em;
@@ -1178,23 +953,6 @@ body::after {
         padding-bottom: 1px;
     }
 
-    .outcasts-card {
-        gap: 5px;
-        padding-top: 6px;
-        padding-bottom: 6px;
-    }
-
-    .outcasts-copy h3 {
-        font-size: 18px;
-    }
-
-    .outcasts-note {
-        font-size: 10px;
-    }
-
-    .outcast-profile {
-        min-height: 26px;
-    }
 }
 
 @media (max-width: 760px) and (max-height: 600px) {
@@ -1259,39 +1017,6 @@ body::after {
         padding-bottom: 0;
     }
 
-    .outcasts-card {
-        gap: 4px;
-        padding: 3px 7px;
-    }
-
-    .outcasts-label {
-        font-size: 7px;
-    }
-
-    .outcasts-copy h3 {
-        font-size: 14px;
-    }
-
-    .outcasts-note {
-        margin-top: 2px;
-        font-size: 9px;
-    }
-
-    .outcasts-count {
-        width: 27px;
-        height: 27px;
-        font-size: 15px;
-    }
-
-    .outcast-profile {
-        min-height: 22px;
-        grid-template-columns: 24px minmax(0, 1fr) 16px;
-        gap: 5px;
-    }
-
-    .outcast-name {
-        font-size: 12px;
-    }
 }
 
 @media (max-height: 760px) and (min-width: 761px) {
@@ -1317,18 +1042,6 @@ body::after {
         padding-bottom: 2px;
     }
 
-    .outcasts-card {
-        gap: 5px;
-        padding: 8px 14px;
-    }
-
-    .outcasts-copy h3 {
-        font-size: 20px;
-    }
-
-    .outcast-profile {
-        min-height: 23px;
-    }
 }
 
 @media (max-height: 600px) and (min-width: 761px) {
@@ -1362,19 +1075,6 @@ body::after {
     .player-panel .player-list .player-name {
         padding-top: 1px;
         padding-bottom: 1px;
-    }
-
-    .outcasts-card {
-        gap: 4px;
-        padding: 3px 10px;
-    }
-
-    .outcast-profile {
-        min-height: 20px;
-    }
-
-    .outcasts-copy h3 {
-        font-size: 20px;
     }
 
 }
